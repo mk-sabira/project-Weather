@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Weather</string>
-    <string name="hello_kotlin_2">hello kotlin 2</string>
-    <string name="hello_kotlin_hello_kotlinhello_kotlinhello_kotlin_hello_kotlinhello_kotlin">Hello Kotlin Hello KotlinHello KotlinHello Kotlin Hello KotlinHello Kotlin</string>
-    <string name="kotlin_text_kotlin_text_kotlin_text_kotlin_text">Kotlin text Kotlin text Kotlin text Kotlin text</string>
+
+    <string name="Lesson"> Lesson 23 </string>
 </resources>

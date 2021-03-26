@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,25 +9,9 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/view"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="@string/hello_kotlin_hello_kotlinhello_kotlinhello_kotlin_hello_kotlinhello_kotlin"
-        tools:layout_editor_absoluteY="3dp"
-        tools:layout_editor_absoluteX="4dp"
-        android:background="@color/black"
-        android:textColor="@color/white"
-        />
-
-    <TextView
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#0E2083"
-        android:text="@string/kotlin_text_kotlin_text_kotlin_text_kotlin_text"
-        android:textColor="@color/white"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="3dp"
-        android:clickable="true"/>
+        android:layout_height="wrap_content"
+        android:text="@string/Lesson" />
 </LinearLayout>
+
