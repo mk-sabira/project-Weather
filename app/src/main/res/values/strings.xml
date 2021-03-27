@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Weather</string>
 
-    <string name="Lesson"> Lesson 23 </string>
+    <string name="Lesson"> ok </string>
+    <string name="SayHello"> Hello </string>
 </resources>

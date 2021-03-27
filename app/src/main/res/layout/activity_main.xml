@@ -12,6 +12,20 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Lesson" />
+        android:text="@string/SayHello"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="32dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number|time"
+        android:hint="Enter your name" />
 </LinearLayout>
 
