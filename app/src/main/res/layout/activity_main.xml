@@ -27,6 +27,7 @@
         android:background="#79E7F4"
         android:ems="10"
         android:hint="Enter your name"
-        android:inputType="number|time" />
+        android:inputType="number|time"
+        android:textSize="24sp" />
 </LinearLayout>
 
