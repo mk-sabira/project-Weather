@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/SayHello"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/teal_200"
         android:textSize="32dp"
         android:gravity="center"
         android:clickable="true"
@@ -24,8 +24,9 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#79E7F4"
         android:ems="10"
-        android:inputType="number|time"
-        android:hint="Enter your name" />
+        android:hint="Enter your name"
+        android:inputType="number|time" />
 </LinearLayout>
 
