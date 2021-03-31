@@ -11,12 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView = findViewById<TextView>(R.id.textView)
-        val editText = findViewById<EditText>(R.id.editText)
-
-        textView.setOnClickListener{
-            textView.text = editText.text
-        }
+//        val textView = findViewById<TextView>(R.id.textView)
+//        val editText = findViewById<EditText>(R.id.editText)
+//
+//        textView.setOnClickListener{
+//            textView.text = editText.text
+//        }
     }
 
 }

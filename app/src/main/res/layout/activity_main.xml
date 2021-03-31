@@ -8,26 +8,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/SayHello"
-        android:textColor="@color/teal_200"
-        android:textSize="32dp"
-        android:gravity="center"
-        android:clickable="true"
-        android:layout_margin="20dp"
+
+    <ImageView
+        android:layout_width="339dp"
+        android:layout_height="403dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/cardview_dark_background"
+        android:src="@drawable/python"
+
         />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#79E7F4"
-        android:ems="10"
-        android:hint="Enter your name"
-        android:inputType="number|time"
-        android:textSize="24sp" />
+
 </LinearLayout>
 
