@@ -3,4 +3,5 @@
 
     <string name="Lesson"> ok </string>
     <string name="SayHello"> Hello </string>
+    <string name="ButtonAccept"> Salam </string>
 </resources>
