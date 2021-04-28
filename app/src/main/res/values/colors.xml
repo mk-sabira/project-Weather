@@ -7,5 +7,7 @@
     <color name="green">#1FBA0E</color>
     <color name="red">#DD3434</color>
     <color name="light_green">#3AE3BF</color>
+    <color name="purple_700">#842FE6</color>
+    <color name="purple_200">#6019B1</color>
 
 </resources>

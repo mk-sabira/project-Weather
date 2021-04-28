@@ -3,17 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity 2"
+        android:text="C"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#EC0B0B"
+        android:text="open activty D"
+        app:layout_constraintEnd_toEndOf="@+id/textC"
+        app:layout_constraintStart_toStartOf="@+id/textC"
+        app:layout_constraintTop_toBottomOf="@+id/textC" />
 </androidx.constraintlayout.widget.ConstraintLayout>
