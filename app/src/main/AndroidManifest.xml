@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Weather">
-        <activity android:name=".ActivityD"
-            android:launchMode="singleTop"/>
-        <activity android:name=".ActivityC" />
-        <activity android:name=".ActivityB" />
-        <activity android:name=".ActivityA"
+        <activity android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
