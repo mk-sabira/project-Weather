@@ -1,5 +1,5 @@
 package ae.tutorialapp.weather
 
 interface FragmentAListener {
-    fun showToast()
+    fun setTextToFragmentB(text: String)
 }
