@@ -2,65 +2,77 @@ package ae.tutorialapp.weather
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var button : Button
-    private lateinit var button2 : Button
-    private lateinit var button3 : Button
-    private lateinit var textView: TextView
-    private lateinit var popButton: Button
 
+
+    lateinit var button: Button
+    lateinit var button2: Button
+    lateinit var button3: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i(INFO_TAG, "onCreate")
 
-        button = findViewById(R.id.button)
-        button2 = findViewById(R.id.button2)
-        button3 = findViewById(R.id.button3)
-        textView = findViewById(R.id.textView2)
-        popButton = findViewById(R.id.backStack)
 
-        setFragment()
-    }
+        button = findViewById<Button>(R.id.button)
+        button2 = findViewById<Button>(R.id.button2)
+        button3 = findViewById<Button>(R.id.button3)
 
-    private fun setFragment() {
-        textView.text = supportFragmentManager.backStackEntryCount.toString()
-
-        supportFragmentManager.addOnBackStackChangedListener {
-            textView.text = supportFragmentManager.backStackEntryCount.toString()
-        }
-        button.setOnClickListener{
-            addFragment(FirstFragment())
-        }
-
-        button2.setOnClickListener{
-            addFragment(SecondFragment())
-        }
-        button3.setOnClickListener{
-            addFragment(ThirdFragment())
-        }
-        popButton.setOnClickListener{
-            supportFragmentManager.popBackStack(0, 0)
-        }
-
+        setClick()
 
     }
 
-    private fun addFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
+    private fun setClick() {
+        button.setOnClickListener {
+            addFragment(FragmentA())
+        }
+        button2.setOnClickListener {
+            addFragment(FragmentB())
+        }
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onStart() {
+        Log.i(INFO_TAG, "onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        Log.i(INFO_TAG, "onResume")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.i(INFO_TAG, "onPause")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.i(INFO_TAG, "onStop")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.i(INFO_TAG, "onDestroy")
+        super.onDestroy()
+    }
 
 
-            transaction.run {
-                replace(R.id.container, fragment)
-                addToBackStack(null)
-                commit()
-            }
-
+    companion object{
+        const val INFO_TAG = "MainActivity"
     }
 
 
