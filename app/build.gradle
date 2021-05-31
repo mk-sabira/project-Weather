@@ -56,4 +56,5 @@ dependencies {
 
     def rv_version = "1.1.0"
     implementation "androidx.recyclerview:recyclerview:$rv_version"
+    implementation "androidx.cardview:cardview:1.0.0"
 }
