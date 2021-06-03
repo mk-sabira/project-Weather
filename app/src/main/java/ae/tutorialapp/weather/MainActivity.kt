@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUp() {
+
         myAdapter = MyAdapter()
         recyclerView.adapter = myAdapter
 
