@@ -9,6 +9,12 @@ object Data {
         Item(3, "Dart", R.drawable.ic_baseline_bedtime_24)
     )
 
+    val itemDetails = listOf<ItemDetails>(
+        ItemDetails(1, "Android", R.drawable.ic_baseline_android_24, "Sun MacroSystem", "What is Lorem Ipsum Lorem Ipsum"),
+        ItemDetails(2, "Java",  R.drawable.ic_baseline_grade_24, "JetBrain", "What is Lorem Ipsum Lorem Ipsum"),
+        ItemDetails(3, "Dart", R.drawable.ic_baseline_bedtime_24, "Goggle", "What is Lorem Ipsum Lorem Ipsum")
+    )
+
 
     fun getLongListOfItems(): MutableList<Any> {
         val list = mutableListOf<Any>()
