@@ -1,16 +1,15 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
+import ae.tutorialapp.weather.R
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 
-class FragmentItems : Fragment(R.layout.fragment_items), MyAdapter.OnClickListener{
+class FragmentItems : Fragment(R.layout.fragment_items), MyAdapter.OnClickListener {
     private lateinit var myAdapter: MyAdapter
     lateinit var recyclerView: RecyclerView
 

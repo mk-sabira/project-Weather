@@ -1,15 +1,14 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
 
+import ae.tutorialapp.weather.R
 import android.content.Intent
-import android.content.res.Resources
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 
 
-class MainActivity : AppCompatActivity(), FragmentItemListener{
+class MainActivity : AppCompatActivity(), FragmentItemListener {
 
 
 

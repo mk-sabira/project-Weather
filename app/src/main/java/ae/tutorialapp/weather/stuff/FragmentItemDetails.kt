@@ -1,10 +1,9 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
+import ae.tutorialapp.weather.R
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -44,7 +43,7 @@ class FragmentItemDetails : Fragment(R.layout.fragment_item_details){
     }
 
     companion object{
-        fun newInstance(id: Long):FragmentItemDetails{
+        fun newInstance(id: Long): FragmentItemDetails {
             val bundle = Bundle().apply {
                 putLong(Long::class.java.canonicalName, id)
             }

@@ -1,4 +1,4 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
 interface FragmentItemListener {
     fun openFragmentItemDetails(id: Long)

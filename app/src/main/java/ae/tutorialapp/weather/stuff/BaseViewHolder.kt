@@ -1,7 +1,6 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
 import android.view.View
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseViewHolder<T>(itemView: View):RecyclerView.ViewHolder(itemView) {

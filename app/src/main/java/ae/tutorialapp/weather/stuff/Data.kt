@@ -1,5 +1,6 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
+import ae.tutorialapp.weather.R
 
 
 object Data {

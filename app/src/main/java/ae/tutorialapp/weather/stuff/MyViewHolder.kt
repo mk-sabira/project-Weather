@@ -1,5 +1,6 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
+import ae.tutorialapp.weather.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ class MyViewHolder(itemView: View): BaseViewHolder<Any>(itemView){
     companion object{
 
 
-        fun create(parent: ViewGroup, listener: MyAdapter.OnClickListener): MyViewHolder{
+        fun create(parent: ViewGroup, listener: MyAdapter.OnClickListener): MyViewHolder {
             val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_my_viewholder, parent, false)
             val holder =  MyViewHolder(view)

@@ -1,14 +1,14 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
-import ae.tutorialapp.weather.MyAdapter.Type.ADVERTISEMENT
-import ae.tutorialapp.weather.MyAdapter.Type.ITEM
+import ae.tutorialapp.weather.stuff.MyAdapter.Type.ADVERTISEMENT
+import ae.tutorialapp.weather.stuff.MyAdapter.Type.ITEM
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(private val listener: OnClickListener): RecyclerView.Adapter<BaseViewHolder<Any>>() {
 
     private val items = arrayListOf<Any>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):BaseViewHolder<Any> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Any> {
 
         return when (viewType){
             ITEM -> MyViewHolder.create(parent, listener)

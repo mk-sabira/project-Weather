@@ -1,4 +1,4 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
 data class Item(
     val id: Long,

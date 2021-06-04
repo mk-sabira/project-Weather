@@ -1,5 +1,6 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.stuff
 
+import ae.tutorialapp.weather.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
