@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class ForeCast(
     var lat: Double? = null,
     var lon: Double? = null,
-    var timeZone: String? = null,
+    var timezone: String? = null,
     var timezone_offset : Long? = 0L,
     var current: CurrentForeCast? = null,
     var hourly: List<HourlyForeCast>? = null,
@@ -39,7 +39,7 @@ data class HourlyForeCast(
     var temp: Double? = null,
     var weather: List<Weather>,
     @SerializedName("pop")
-    var probability: Int? = null,
+    var probability: Double? = null
 
 )
 
