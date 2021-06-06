@@ -22,6 +22,30 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
+    private val okhttp by lazy {
+        val interceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+        OkHttpClient.Builder().addInterceptor(interceptor).build()
+
+    }
+
+    private val retrofit by lazy {
+        Retrofit.Builder()
+//                .baseUrl("https://api.openweathermap.org/data/2.5/")
+            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okhttp)
+            .build()
+    }
+    private val weatherApi by lazy {
+        retrofit.create(WeatherApi::class.java)
+    }
+
+    private val postsApi by lazy {
+        retrofit.create(PostApi::class.java)
+    }
+
     lateinit var textView: TextView
     lateinit var textView2: TextView
 
@@ -37,8 +61,50 @@ class MainActivity : AppCompatActivity() {
 //        fetchPostById()
 //        createPost()
 //        createPostUsingFields()
+//        createPostUsingFieldMap()
+//        updatePost()
+        deletePost()
 
-        createPostUsingFieldMap()
+    }
+
+    private fun deletePost() {
+        val call = postsApi.deletePost("42")
+        call.enqueue(object : Callback<Unit>{
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                textView.text = response.code().toString()
+            }
+
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+
+            }
+
+        })
+    }
+
+    private fun updatePost() {
+        val newPost = Post(userId = "20", body = "This is body")
+        val call = postsApi.patchPost(id = "42", post = newPost )
+
+        call.enqueue(object : Callback<Post>{
+            override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                val postResult = response.body()
+                postResult?.let {
+                    val resultText = "ID: " + it.id+ "\n" +
+                            "userID: " + it.userId + "\n" +
+                            "TITLE: " + it.title + "\n" +
+                            "BODY: " + it.body + "\n"
+                    textView.text = resultText
+                }
+
+
+            }
+
+            override fun onFailure(call: Call<Post>, t: Throwable) {
+
+            }
+
+        }
+        )
     }
 
     private fun createPostUsingFieldMap() {
@@ -195,29 +261,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private val okhttp by lazy {
-        val interceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
-        OkHttpClient.Builder().addInterceptor(interceptor).build()
 
-    }
-
-    private val retrofit by lazy {
-            Retrofit.Builder()
-//                .baseUrl("https://api.openweathermap.org/data/2.5/")
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okhttp)
-                .build()
-        }
-    private val weatherApi by lazy {
-        retrofit.create(WeatherApi::class.java)
-    }
-
-    private val postsApi by lazy {
-        retrofit.create(PostApi::class.java)
-    }
 
 
  }
