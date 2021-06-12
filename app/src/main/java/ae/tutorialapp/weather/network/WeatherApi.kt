@@ -12,7 +12,7 @@ interface WeatherApi {
 
 
     @GET("onecall")
-    fun fetWeatherUsingQuery(
+    fun fetWeatherUsingQuerry(
         @Query("lat") lat: Double = 23.4241,
         @Query("lon") lon: Double = 53.8478,
         @Query("exclude") exclude: String = "minutely",
