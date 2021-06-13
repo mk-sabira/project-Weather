@@ -3,6 +3,9 @@ package ae.tutorialapp.weather
 
 import ae.tutorialapp.weather.models.ForeCast
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,8 +17,12 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    private var workResult = 0
+    lateinit var btn_start: Button
+    lateinit var btn_showToast: Button
     lateinit var textView: TextView
     lateinit var textView2: TextView
+    lateinit var tv_counter: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +31,39 @@ class MainActivity : AppCompatActivity() {
        textView = findViewById(R.id.textView)
        textView2 = findViewById(R.id.textView2)
 
-        fetchWeatherUsingQuarry()
+        setUp()
+
+//        fetchWeatherUsingQuarry()
 
     }
+
+    private fun setUp() {
+       btn_start = findViewById(R.id.btn_start)
+       btn_showToast = findViewById(R.id.btn_showToast)
+
+        btn_start.setOnClickListener {
+            hardWork()
+        }
+        btn_showToast.setOnClickListener {
+            Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun hardWork() {
+        tv_counter = findViewById(R.id.tv_counter)
+        Thread(Runnable {
+            for (i in 0..4){
+                Thread.sleep(1000)
+                workResult++
+            }
+
+            runOnUiThread{
+                tv_counter.text = workResult.toString()
+            }
+        }).start()
+
+    }
+
 
     private fun fetchWeatherUsingQuarry() {
         val call = WeatherClient.weatherApi.fetWeatherUsingQuerry( 24.4539,  54.3773 )
