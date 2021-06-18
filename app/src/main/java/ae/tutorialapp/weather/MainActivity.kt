@@ -2,6 +2,7 @@ package ae.tutorialapp.weather
 
 
 import ae.tutorialapp.weather.models.ForeCast
+import ae.tutorialapp.weather.storage.ForeCastDatabase
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         }
         btn_showToast.setOnClickListener {
             Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show()
+
+            ForeCastDatabase.getInstance(applicationContext).foreCastDao().insert(ForeCast(lat = 21341.000))
+
         }
     }
 
