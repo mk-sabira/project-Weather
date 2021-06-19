@@ -9,83 +9,120 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:ems="10"
+        android:hint="id"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="START WORK ON MAIN THREAD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_counter" />
-
-    <Button
-        android:id="@+id/btn_showToast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="SHOW TOAST"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Switch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_showToast" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
-
-    <TextView
-        android:id="@+id/tv_counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_lat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="lat"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_id" />
+
+    <EditText
+        android:id="@+id/et_long"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="long"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_lat" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="description"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_long" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_query_get_all">
+
+        <TextView
+            android:id="@+id/tv_forcast_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="empty" />
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="INSERT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+    <Button
+        android:id="@+id/btn_uptade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="UPTADE"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_insert"
+        app:layout_constraintStart_toEndOf="@+id/btn_insert"
+        app:layout_constraintTop_toTopOf="@+id/btn_insert" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="DELETE"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_uptade"
+        app:layout_constraintStart_toEndOf="@+id/btn_uptade"
+        app:layout_constraintTop_toTopOf="@+id/btn_uptade" />
+
+    <Button
+        android:id="@+id/btn_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="QUARY"
+        app:layout_constraintEnd_toStartOf="@+id/btn_uptade"
+        app:layout_constraintStart_toStartOf="@+id/btn_insert"
+        app:layout_constraintTop_toBottomOf="@+id/btn_insert" />
+
+    <Button
+        android:id="@+id/btn_query_get_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="QUERY GET ALL"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_query"
+        app:layout_constraintStart_toEndOf="@+id/btn_query"
+        app:layout_constraintTop_toTopOf="@+id/btn_query" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

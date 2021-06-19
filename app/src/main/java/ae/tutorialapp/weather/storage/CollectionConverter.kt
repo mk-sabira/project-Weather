@@ -1,24 +1,31 @@
 package ae.tutorialapp.weather.storage
 
+import ae.tutorialapp.weather.models.DailyForeCast
 import ae.tutorialapp.weather.models.HourlyForeCast
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class CollectionConverter {
 
-
-    fun fromHourlyForecastListToJson(list: List<HourlyForeCast>): String =
+    @TypeConverter
+    fun fromHourlyForecastListToJson(list: List<HourlyForeCast>?): String? =
         Gson().toJson(list)
 
-    fun fromJsonToHourlyForecastList(json: String): List<HourlyForeCast> =
+    @TypeConverter
+    fun fromJsonToHourlyForecastList(json: String?): List<HourlyForeCast>? =
         Gson().fromJson(json, object : TypeToken<List<HourlyForeCast>>() {}.type)
 
 
 
-    fun fromDailyForecastListToJson(list: List<HourlyForeCast>): String =
+    @TypeConverter
+    fun fromDailyForecastListToJson(list: List<DailyForeCast>?): String? =
         Gson().toJson(list)
 
-    fun fromJsonToDailyForecastList(json: String): List<HourlyForeCast> =
-        Gson().fromJson(json, object : TypeToken<List<HourlyForeCast>>() {}.type)
+
+    @TypeConverter
+    fun fromJsonToDailyForecastList(json: String?): List<DailyForeCast>? =
+        Gson().fromJson(json, object : TypeToken<List<DailyForeCast>>() {}.type)
 
 }

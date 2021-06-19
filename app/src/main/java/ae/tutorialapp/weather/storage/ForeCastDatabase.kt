@@ -7,7 +7,7 @@ import androidx.room.*
 
 @Database(
     entities = [ForeCast::class],
-    version = 0,
+    version = 1,
     exportSchema = false
 )
 
@@ -27,7 +27,7 @@ abstract class ForeCastDatabase:RoomDatabase() {
                     context,
                     ForeCastDatabase::class.java,
                     DB_NAME
-                    )
+                )
                     .fallbackToDestructiveMigration()
                     .build()
             }
