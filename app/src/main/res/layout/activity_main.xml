@@ -10,7 +10,7 @@
 
 
     <EditText
-        android:id="@+id/et_id"
+        android:id="@+id/etId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_lat"
+        android:id="@+id/etLat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -29,10 +29,10 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_id" />
+        app:layout_constraintTop_toBottomOf="@+id/etId" />
 
     <EditText
-        android:id="@+id/et_long"
+        android:id="@+id/etLong"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -40,10 +40,10 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_lat" />
+        app:layout_constraintTop_toBottomOf="@+id/etLat" />
 
     <EditText
-        android:id="@+id/et_description"
+        android:id="@+id/etDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -51,7 +51,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_long" />
+        app:layout_constraintTop_toBottomOf="@+id/etLong" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_query_get_all">
+        app:layout_constraintTop_toBottomOf="@+id/btnQueryGetAll">
 
         <TextView
             android:id="@+id/tv_forcast_list"
@@ -74,54 +74,54 @@
     </androidx.core.widget.NestedScrollView>
 
     <Button
-        android:id="@+id/btn_insert"
+        android:id="@+id/btnInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="INSERT"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_description" />
+        app:layout_constraintTop_toBottomOf="@+id/etDescription" />
 
     <Button
-        android:id="@+id/btn_uptade"
+        android:id="@+id/btnUptade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="UPTADE"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_insert"
-        app:layout_constraintStart_toEndOf="@+id/btn_insert"
-        app:layout_constraintTop_toTopOf="@+id/btn_insert" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnInsert"
+        app:layout_constraintStart_toEndOf="@+id/btnInsert"
+        app:layout_constraintTop_toTopOf="@+id/btnInsert" />
 
     <Button
-        android:id="@+id/btn_delete"
+        android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="DELETE"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_uptade"
-        app:layout_constraintStart_toEndOf="@+id/btn_uptade"
-        app:layout_constraintTop_toTopOf="@+id/btn_uptade" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnUptade"
+        app:layout_constraintStart_toEndOf="@+id/btnUptade"
+        app:layout_constraintTop_toTopOf="@+id/btnUptade" />
 
     <Button
-        android:id="@+id/btn_query"
+        android:id="@+id/btnQuery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="QUARY"
-        app:layout_constraintEnd_toStartOf="@+id/btn_uptade"
-        app:layout_constraintStart_toStartOf="@+id/btn_insert"
-        app:layout_constraintTop_toBottomOf="@+id/btn_insert" />
+        app:layout_constraintEnd_toStartOf="@+id/btnUptade"
+        app:layout_constraintStart_toStartOf="@+id/btnInsert"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsert" />
 
     <Button
-        android:id="@+id/btn_query_get_all"
+        android:id="@+id/btnQueryGetAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="QUERY GET ALL"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_query"
-        app:layout_constraintStart_toEndOf="@+id/btn_query"
-        app:layout_constraintTop_toTopOf="@+id/btn_query" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnQuery"
+        app:layout_constraintStart_toEndOf="@+id/btnQuery"
+        app:layout_constraintTop_toTopOf="@+id/btnQuery" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

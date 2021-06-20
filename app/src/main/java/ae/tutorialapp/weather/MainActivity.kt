@@ -1,6 +1,5 @@
 package ae.tutorialapp.weather
 
-
 import ae.tutorialapp.weather.models.CurrentForeCast
 import ae.tutorialapp.weather.models.ForeCast
 import ae.tutorialapp.weather.models.Weather
@@ -9,6 +8,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,7 +16,6 @@ import io.reactivex.schedulers.Schedulers
 
 
 class MainActivity: AppCompatActivity(){
-
     private val db by lazy {
         ForeCastDatabase.getInstance(applicationContext)
     }
@@ -32,6 +31,8 @@ class MainActivity: AppCompatActivity(){
     private lateinit var btn_query: Button
     private lateinit var btn_query_get_all: Button
 
+    private lateinit var tv_forecast_list: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +43,13 @@ class MainActivity: AppCompatActivity(){
     }
 
     private fun setUp() {
-        btn_insert = findViewById(R.id.btn_insert)
-        btn_uptade = findViewById(R.id.btn_uptade)
-        btn_delete = findViewById(R.id.btn_delete)
+        btn_insert = findViewById(R.id.btnInsert)
+        btn_uptade = findViewById(R.id.btnUptade)
+        btn_delete = findViewById(R.id.btnDelete)
+        btn_query_get_all = findViewById(R.id.btnQueryGetAll)
+        btn_query = findViewById(R.id.btnQuery)
+
+        tv_forecast_list = findViewById(R.id.tv_forcast_list)
 
         btn_insert.setOnClickListener {
             db.foreCastDao()
@@ -69,13 +74,47 @@ class MainActivity: AppCompatActivity(){
                 .subscribe {  }
         }
 
+        btn_query_get_all.setOnClickListener {
+            db.foreCastDao()
+                .getAll()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        var text = ""
+
+                        it.forEach{
+                            text = it.toString()
+                        }
+                        tv_forecast_list.text = text
+                    },
+                    {
+
+                    }
+                )
+        }
+        btn_query.setOnClickListener {
+            db.foreCastDao()
+                .deleteAll()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+
+                    },
+                    {
+
+                    }
+                )
+        }
+
     }
 
     private fun getForecastFromInput(): ForeCast{
-        et_id = findViewById(R.id.et_id)
-        et_lat = findViewById(R.id.et_lat)
-        et_long = findViewById(R.id.et_long)
-        et_description = findViewById(R.id.et_description)
+        et_id = findViewById(R.id.etId)
+        et_lat = findViewById(R.id.etLat)
+        et_long = findViewById(R.id.etLong)
+        et_description = findViewById(R.id.etDescription)
 
         val id = et_id.text?.toString().takeIf { !it.isNullOrEmpty() }?.toLong()
         val lat = et_lat.text?.toString().takeIf { !it.isNullOrEmpty() }?.toDouble()
