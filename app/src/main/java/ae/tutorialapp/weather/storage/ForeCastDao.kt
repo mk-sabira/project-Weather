@@ -10,7 +10,7 @@ import io.reactivex.Single
 @Dao
 interface ForeCastDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(foreCast: ForeCast)
 
     @Update

@@ -7,7 +7,7 @@ import androidx.room.*
 
 @Database(
     entities = [ForeCast::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">#25E3F2FD</item>
+        <item name="colorPrimaryDark">#1976D2</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="WhiteText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="WhiteTextWithIcon" parent="WhiteText">
+        <item name="android:drawableEnd">@drawable/ic_celsius</item>
+    </style>
+
+    <style name="WhiteSmallText" parent="WhiteText">
+        <item name="android:textSize">12sp</item>
+    </style>
+    
+    <style name="WhiteMediumText" parent="WhiteText">
+        <item name="android:textSize">18sp</item>
+    </style>
+    
+    <style name="WhiteMediumLargeText" parent="WhiteText">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="GreySmallText" parent="WhiteSmallText">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="ExtraLargeWhiteTextWithIcon" parent="WhiteTextWithIcon">
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <style name="WhiteSmallTextWithIcon" parent="WhiteTextWithIcon">
+        <item name="android:textSize">12sp</item>
+        <item name="drawableEndCompat">@drawable/celsius_24dp</item>
+    </style>
+
+    <style name="WhiteSmallTextWithWaterIcon" parent="WhiteText">
+        <item name="android:textSize">32sp</item>
+        <item name="drawableStartCompat">@drawable/ic_water_drop</item>
+    </style>
+
+    <style name="WhiteMediumLargeTextWithIcon" parent="WhiteTextWithIcon">
+        <item name="android:textSize">16sp</item>
+        <item name="drawableEndCompat">@drawable/celsius_24dp</item>
+    </style>
+
+
+
+
+
+
+
+</resources>
