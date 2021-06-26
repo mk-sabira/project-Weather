@@ -1,7 +1,6 @@
-package ae.tutorialapp.weather
+package ae.tutorialapp.weather.network
 
 
-import ae.tutorialapp.weather.network.WeatherApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

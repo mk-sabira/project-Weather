@@ -10,7 +10,7 @@
     android:background="@color/mild_Blue"
     android:fitsSystemWindows="false"
     app:layoutDescription="@xml/motion"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <ProgressBar
         android:id="@+id/progress"
@@ -183,7 +183,7 @@
                 app:cardElevation="0dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/tv_hourly_forecast"
+                    android:id="@+id/rv_hourly_forecast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -202,7 +202,7 @@
                 app:cardElevation="0dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/tv_daily_forecast"
+                    android:id="@+id/rv_daily_forecast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
