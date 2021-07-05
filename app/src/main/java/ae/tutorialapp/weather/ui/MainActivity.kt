@@ -27,6 +27,7 @@ class MainActivity: AppCompatActivity(){
     private val db by lazy {
         ForeCastDatabase.getInstance(applicationContext)
     }
+
     lateinit var bindingClass:ActivityMainBinding
 
     private lateinit var dailyForeCastAdapter: DailyForeCastAdapter
