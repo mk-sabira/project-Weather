@@ -8,10 +8,13 @@ import ae.tutorialapp.weather.models.ForeCast
 import ae.tutorialapp.weather.ui.rv.DailyForeCastAdapter
 import ae.tutorialapp.weather.ui.rv.HourlyForeCastAdapter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.google.firebase.messaging.FirebaseMessaging
 import org.koin.android.viewmodel.ext.android.getViewModel
 import kotlin.math.roundToInt
 
@@ -34,6 +37,14 @@ class MainActivity: AppCompatActivity(){
         setUpViews()
         setUpRecyclerViews()
         subscribeToLiveData()
+
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            Log.i("TOKEN", it)
+        }
+
+        intent.getStringExtra("EXTRA")?.let {
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun setUpViews() {
