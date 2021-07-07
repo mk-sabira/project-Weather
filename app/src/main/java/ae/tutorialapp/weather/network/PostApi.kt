@@ -8,7 +8,7 @@ interface PostApi {
 
     @GET("posts/{id}")
     fun fetchPostById(
-        @Path("id") id: Int = 1
+        @Path("id") id: Int
     ): Call<Post>
 
     @POST("posts")
@@ -28,7 +28,7 @@ interface PostApi {
     @POST("posts")
     @FormUrlEncoded
     fun createPostUsingFieldMap(
-        @FieldMap map:Map<String, String>
+        @FieldMap map: Map<String,String>
     ): Call<Post>
 
     @PUT("posts/{id}")

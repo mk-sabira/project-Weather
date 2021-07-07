@@ -1,7 +1,7 @@
 package ae.tutorialapp.weather.ui.rv
 
 import ae.tutorialapp.weather.R
-import ae.tutorialapp.weather.format
+import ae.tutorialapp.weather.Extenstions.format
 import ae.tutorialapp.weather.models.Constants
 import ae.tutorialapp.weather.models.HourlyForeCast
 import android.view.LayoutInflater
@@ -16,6 +16,7 @@ import kotlin.math.roundToInt
 class HourlyForeCastVH(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     fun bindH(item: HourlyForeCast){
+
         itemView.run {
             val tvTime = findViewById<TextView>(R.id.tv_time)
             val tvPrecipitationHourly = findViewById<TextView>(R.id.tv_precipitation_hourly)

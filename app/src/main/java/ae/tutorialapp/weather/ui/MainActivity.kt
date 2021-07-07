@@ -2,28 +2,32 @@ package ae.tutorialapp.weather.ui
 
 
 import ae.tutorialapp.weather.databinding.ActivityMainBinding
-import ae.tutorialapp.weather.format
+import ae.tutorialapp.weather.Extenstions.format
 import ae.tutorialapp.weather.models.Constants
 import ae.tutorialapp.weather.models.ForeCast
+import ae.tutorialapp.weather.network.WeatherClient
+import ae.tutorialapp.weather.storage.ForeCastDatabase
 import ae.tutorialapp.weather.ui.rv.DailyForeCastAdapter
 import ae.tutorialapp.weather.ui.rv.HourlyForeCastAdapter
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
-import com.google.firebase.messaging.FirebaseMessaging
-import org.koin.android.viewmodel.ext.android.getViewModel
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlin.math.roundToInt
 
-
+@SuppressLint("CheckResult")
 class MainActivity: AppCompatActivity(){
 
-    lateinit var bindingClass:ActivityMainBinding
+    private val db by lazy {
+        ForeCastDatabase.getInstance(applicationContext)
+    }
 
-    private lateinit var vm: MainViewModel
+    lateinit var bindingClass:ActivityMainBinding
 
     private lateinit var dailyForeCastAdapter: DailyForeCastAdapter
     private lateinit var hourlyForeCastAdapter: HourlyForeCastAdapter
@@ -33,23 +37,16 @@ class MainActivity: AppCompatActivity(){
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        vm = getViewModel ( MainViewModel::class)
         setUpViews()
         setUpRecyclerViews()
+        getWeatherFromApi()
         subscribeToLiveData()
-
-        FirebaseMessaging.getInstance().token.addOnSuccessListener {
-            Log.i("TOKEN", it)
-        }
-
-        intent.getStringExtra("EXTRA")?.let {
-            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
-        }
     }
 
     private fun setUpViews() {
         bindingClass.tvRefresh.setOnClickListener {
-            vm.getWeatherFromApi()
+            showLoading()
+            getWeatherFromApi()
         }
     }
 
@@ -62,38 +59,47 @@ class MainActivity: AppCompatActivity(){
 
     }
 
-    private fun subscribeToLiveData() {
-        vm.getForeCastAsLive().observe(this, androidx.lifecycle.Observer {
-            it?.let {
-                setValuesToViews(it)
-                loadWeatherIcon(it)
-                setDataToRecyclerViews(it)
-            }
-        })
-
-        vm._isLoading.observe(this, Observer {
-            when(it){
-                true -> showLoading()
-                false -> hideLoading()
-            }
-        })
-    }
-
-    private fun setDataToRecyclerViews(it: ForeCast) {
-        it.daily?.let { dailyList ->
-            dailyForeCastAdapter.setItems(dailyList)
-        }
-        it.hourly?.let { hourlyList ->
-            hourlyForeCastAdapter.setItems(hourlyList)
-        }
-    }
-
     private fun showLoading() {
         bindingClass.progress.visibility = View.VISIBLE
     }
 
     private fun hideLoading() {
         bindingClass.progress.visibility = View.INVISIBLE
+    }
+
+    private fun getWeatherFromApi() {
+        WeatherClient.weatherApi.fetchWeather()
+            .subscribeOn(Schedulers.io())
+            .map {
+                db.foreCastDao().insert(it)
+                it
+            }
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                hideLoading()
+            },
+                {
+                    hideLoading()
+                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                })
+    }
+
+    private fun subscribeToLiveData() {
+        db.foreCastDao().getAll().observe(this, Observer {
+            it?.let {
+                setValuesToViews(it)
+                loadWeatherIcon(it)
+
+                it.daily?.let { dailyList ->
+                    dailyForeCastAdapter.setItems(dailyList)
+                }
+
+                it.hourly?.let { hourlyList ->
+                    hourlyForeCastAdapter.setItems(hourlyList)
+                }
+
+            }
+        })
     }
 
     private fun setValuesToViews(it: ForeCast) {

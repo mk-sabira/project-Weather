@@ -1,7 +1,7 @@
 package ae.tutorialapp.weather.ui.rv
 
 import ae.tutorialapp.weather.R
-import ae.tutorialapp.weather.format
+import ae.tutorialapp.weather.Extenstions.format
 import ae.tutorialapp.weather.models.Constants
 import ae.tutorialapp.weather.models.DailyForeCast
 import android.view.LayoutInflater

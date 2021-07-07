@@ -49,7 +49,7 @@
             android:layout_width="45dp"
             android:layout_height="62dp"
             android:layout_marginEnd="24dp"
-            android:src="@drawable/ic_baseline_android_24"
+            android:src="@drawable/ic_launcher_round"
             app:layout_constraintBottom_toBottomOf="@+id/tv_temperature"
             app:layout_constraintEnd_toStartOf="@+id/tv_temperature"
             app:layout_constraintHorizontal_bias="0.53"
@@ -86,11 +86,12 @@
             style="@style/WhiteMediumLargeTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="12dp"
             android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_temperature"
+            app:layout_constraintHorizontal_bias="0.169"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_weather_icon"
             app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
             tools:text="20/19" />
 
@@ -99,12 +100,11 @@
             style="@style/WhiteMediumLargeTextWithIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="112dp"
+            android:layout_marginStart="8dp"
             android:padding="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_temp_max"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_temp_min"
+            app:layout_constraintStart_toEndOf="@+id/tv_temp_min"
+            app:layout_constraintTop_toTopOf="@+id/tv_temp_min"
             tools:text="@string/feels_like" />
 
         <TextView
@@ -122,25 +122,21 @@
         <TextView
             android:id="@+id/tv_divided"
             style="@style/WhiteText"
-            android:layout_width="11dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="/"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max"
             app:layout_constraintStart_toEndOf="@+id/tv_temp_max"
-            app:layout_constraintTop_toTopOf="@+id/tv_temp_max"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintTop_toTopOf="@+id/tv_temp_max" />
 
         <TextView
             android:id="@+id/tv_temp_min"
             style="@style/WhiteMediumLargeTextWithIcon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="0dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_divided"
-            app:layout_constraintEnd_toStartOf="@+id/tv_feels_like"
             app:layout_constraintStart_toEndOf="@+id/tv_divided"
             app:layout_constraintTop_toTopOf="@+id/tv_divided" />
 

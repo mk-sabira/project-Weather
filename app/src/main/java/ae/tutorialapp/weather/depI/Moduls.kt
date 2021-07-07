@@ -1,5 +1,6 @@
 package ae.tutorialapp.weather.depI
 
+import ae.tutorialapp.weather.BuildConfig
 import ae.tutorialapp.weather.network.WeatherApi
 import ae.tutorialapp.weather.repository.WeatherRepo
 import ae.tutorialapp.weather.storage.ForeCastDatabase
@@ -42,13 +43,15 @@ private fun provideHttpClient(): OkHttpClient {
         level = HttpLoggingInterceptor.Level.BODY
     }
     return OkHttpClient.Builder()
-        .addInterceptor(interceptor)
+        .apply {
+            addInterceptor(interceptor)
+        }
         .build()
 }
 
 private fun provideRetrofit(httpClient: OkHttpClient) =
     Retrofit.Builder()
-        .baseUrl("https://api.openweathermap.org/data/2.5/")
+        .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(httpClient)

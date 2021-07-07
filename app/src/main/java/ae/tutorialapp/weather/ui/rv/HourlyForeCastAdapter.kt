@@ -7,11 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 class HourlyForeCastAdapter: RecyclerView.Adapter<HourlyForeCastVH>() {
     private val items = arrayListOf<HourlyForeCast>()
 
-    fun setItems(newItems: List<HourlyForeCast>) {
-        items.clear()
-        items.addAll(newItems)
-        notifyDataSetChanged()
-    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyForeCastVH {
         return HourlyForeCastVH.createVH(parent)
     }
@@ -21,4 +17,10 @@ class HourlyForeCastAdapter: RecyclerView.Adapter<HourlyForeCastVH>() {
     }
 
     override fun getItemCount() = items.count()
+
+    fun setItems(newItems: List<HourlyForeCast>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
+    }
 }
