@@ -40,7 +40,6 @@ class MainActivity: AppCompatActivity(){
 
         setUpViews()
         setUpRecyclerView()
-        setUpRecyclerView2()
         getWeatherFromApi()
         subscribeToLiveData()
 
@@ -57,12 +56,11 @@ class MainActivity: AppCompatActivity(){
         hourlyForeCastAdapter = HourlyForeCastAdapter()
         bindingClass.rvHourlyForecast.adapter = hourlyForeCastAdapter
 
-    }
-
-    private fun setUpRecyclerView2() {
         dailyForeCastAdapter = DailyForeCastAdapter()
         bindingClass.rvDailyForecast.adapter = dailyForeCastAdapter
+
     }
+
 
     private fun showLoading() {
         bindingClass.progress.visibility = View.VISIBLE
