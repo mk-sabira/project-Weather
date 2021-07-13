@@ -15,7 +15,6 @@ data class ForeCast(
     var current: CurrentForeCast? = null,
     var hourly: List<HourlyForeCast>? = null,
     var daily: List<DailyForeCast>? = null
-
 )
 
 data class CurrentForeCast(
@@ -42,7 +41,6 @@ data class HourlyForeCast(
     var weather: List<Weather>,
     @SerializedName("pop")
     var probability: Double? = null
-
 )
 
 data class DailyForeCast(

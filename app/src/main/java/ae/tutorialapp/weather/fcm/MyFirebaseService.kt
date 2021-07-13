@@ -44,6 +44,5 @@ class MyFirebaseService: FirebaseMessagingService() {
             .build()
 
         notificationManager.notify(System.currentTimeMillis().toInt(), notification)
-
     }
 }

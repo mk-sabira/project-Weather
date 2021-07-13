@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
 class MainViewModel(private val  repo: WeatherRepo): ViewModel() {
+
     private val compositeDisposable = CompositeDisposable()
 
     private val isLoading = MutableLiveData<Boolean>()
