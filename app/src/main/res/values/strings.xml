@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Weather</string>
 
-    <string name="Lesson"> ok </string>
-    <string name="SayHello"> Hello </string>
-    <string name="ButtonAccept"> Salam </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="abuDhabi"> Abu Dhabi </string>
+    <string name="refresh"> Refresh </string>
+    <string name="sunset"> Sunset </string>
+    <string name="sunrise"> Sunrise </string>
+    <string name="humidity"> Humidity </string>
+    <string name="feels_like"> feels like </string>
+
+
 </resources>

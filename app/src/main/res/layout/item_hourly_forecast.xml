@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/WhiteSmallText"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_weather_icon_item_hourly"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_time"
+        app:layout_constraintStart_toStartOf="@+id/tv_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time"
+        app:srcCompat="@drawable/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/tv_precipitation_hourly"
+        style="@style/WhiteSmallTextWithWaterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_weather_icon_item_hourly"
+        app:layout_constraintStart_toStartOf="@+id/iv_weather_icon_item_hourly"
+        app:layout_constraintTop_toBottomOf="@+id/iv_weather_icon_item_hourly" />
+
+    <TextView
+        android:id="@+id/tv_temp_hourly"
+        style="@style/WhiteSmallTextWithIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_precipitation_hourly"
+        app:layout_constraintStart_toStartOf="@+id/tv_precipitation_hourly"
+        app:layout_constraintTop_toBottomOf="@+id/tv_precipitation_hourly" />
+</androidx.constraintlayout.widget.ConstraintLayout>

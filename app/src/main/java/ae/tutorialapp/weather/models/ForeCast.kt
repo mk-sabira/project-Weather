@@ -1,12 +1,17 @@
 package ae.tutorialapp.weather.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class ForeCast(
+    var id: Long? = null,
     var lat: Double? = null,
     var lon: Double? = null,
-    var timeZone: String? = null,
-    var timezone_offset : Long? = 0L,
+    @PrimaryKey
+    var timezone: String,
+    var timezone_offset : Long? = null,
     var current: CurrentForeCast? = null,
     var hourly: List<HourlyForeCast>? = null,
     var daily: List<DailyForeCast>? = null
@@ -22,9 +27,6 @@ data class CurrentForeCast(
     var feels_like: Double? = null,
     var humidity: Int? = null,
     var weather: List<Weather>
-
-
-
 )
 
 data class Weather(
@@ -37,9 +39,9 @@ data class HourlyForeCast(
     @SerializedName("dt")
     var date: Long? = null,
     var temp: Double? = null,
-    var weather: List<Weather>,
+    var weather: List<Weather>? = null,
     @SerializedName("pop")
-    var probability: Int? = null,
+    var probability: Double? = null
 
 )
 
@@ -49,7 +51,7 @@ data class DailyForeCast(
     var temp: Temperature? = null,
     var weather: List<Weather>? = null,
     @SerializedName("pop")
-    var probability: Int? = null
+    var probability: Double? = null
 )
 
 data class Temperature(

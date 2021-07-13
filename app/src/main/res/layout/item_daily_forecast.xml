@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/tv_weekday"
+        style="@style/WhiteSmallText"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Friday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_weather_icon_item"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weekday"/>
+
+    <TextView
+        android:id="@+id/tv_precipitation"
+        style="@style/WhiteSmallTextWithWaterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_weather_icon_item" />
+
+    <TextView
+        android:id="@+id/tv_temp_max_item"
+        style="@style/WhiteSmallTextWithIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        tools:text="19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_precipitation" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="4dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_temp_max_item">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_temp_min_item"
+        style="@style/WhiteSmallTextWithIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
