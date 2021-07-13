@@ -1,4 +1,4 @@
-package ae.tutorialapp.weather.Extenstions
+package ae.tutorialapp.weather.extenstions
 
 import java.text.SimpleDateFormat
 import java.util.*

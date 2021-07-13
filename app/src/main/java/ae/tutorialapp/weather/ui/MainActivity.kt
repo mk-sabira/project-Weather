@@ -2,7 +2,7 @@ package ae.tutorialapp.weather.ui
 
 
 import ae.tutorialapp.weather.databinding.ActivityMainBinding
-import ae.tutorialapp.weather.Extenstions.format
+import ae.tutorialapp.weather.extenstions.format
 import ae.tutorialapp.weather.models.Constants
 import ae.tutorialapp.weather.models.ForeCast
 import ae.tutorialapp.weather.network.WeatherClient
